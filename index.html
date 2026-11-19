@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentEquip — Аренда оборудования в Сургуте</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-icon">🏗️</span>
+                <span class="logo-text">RentEquip</span>
+            </div>
+            <nav class="nav">
+                <a href="#catalog">Каталог</a>
+                <a href="#advantages">Преимущества</a>
+                <a href="#team">Команда</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <button class="btn btn-small" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})">Арендовать</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Профессиональное оборудование<br>в аренду за 2 минуты</h1>
+            <p>Строительная техника, инструмент и оборудование для мероприятий в Сургуте. Без залога для постоянных клиентов.</p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn btn-primary">Смотреть каталог</a>
+                <a href="#contacts" class="btn btn-outline">Связаться с нами</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section catalog-section" id="catalog">
+        <div class="container">
+            <h2 class="section-title">Наш парк оборудования</h2>
+            
+            <div class="filters-panel">
+                <div class="filter-item">
+                    <label>Категория:</label>
+                    <select id="category-filter">
+                        <option value="all">Все категории</option>
+                        <option value="build">Строительное</option>
+                        <option value="garden">Садовое</option>
+                        <option value="event">Для событий</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label>Цена до: <span id="price-display">10000</span> ₽</label>
+                    <input type="range" id="price-filter" min="500" max="10000" step="500" value="10000">
+                </div>
+            </div>
+
+            <div class="grid-container" id="catalog-grid">
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light" id="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🚀</div>
+                    <h3>Быстрая доставка</h3>
+                    <p>Доставим оборудование на объект в течение 2 часов по Сургуту.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛡️</div>
+                    <h3>Страховка включена</h3>
+                    <p>Все риски поломки берет на себя наша компания. Вы платите только за работу.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💳</div>
+                    <h3>Без залога</h3>
+                    <p>Для юридических лиц и постоянных клиентов работаем без денежных залогов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="team">
+        <div class="container">
+            <h2 class="section-title">Наша команда</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">👨‍💼</div>
+                    <h3>Максим Фадеев</h3>
+                    <p class="role">Руководитель проекта</p>
+                    <p class="desc">Организация процессов и стратегия развития.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">👩‍💻</div>
+                    <h3>Анна С.</h3>
+                    <p class="role">Менеджер по работе с клиентами</p>
+                    <p class="desc">Обработка заявок и контроль бронирований.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">👨‍🔧</div>
+                    <h3>Сергей П.</h3>
+                    <p class="role">Главный инженер</p>
+                    <p class="desc">Техническое обслуживание и проверка оборудования.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contacts">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>RentEquip</h3>
+                <p>Сервис аренды профессионального оборудования №1 в Сургуте.</p>
+                <p class="copyright">© 2026 Все права защищены.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Контакты</h3>
+                <p>📍 г.  Сургут,</p>
+                <p>📞 +7 (999) 000-00-00</p>
+                <p>✉️ epbmo02@gmail.com</p>
+                <p>✈️ Telegram: @B0J651</p>
+            </div>
+            <div class="footer-col">
+                <h3>Реквизиты</h3>
+                <p>ИНН: 1234567890</p>
+                <p>ОГРН: 1122334455667</p>
+                <p>Банк: ПАО Сбербанк</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="booking-modal">
+        <div class="modal-window">
+            <button class="close-modal" id="close-btn">&times;</button>
+            <h3>Оформление брони</h3>
+            <p id="modal-item-name" style="font-weight: bold; margin-bottom: 15px; color: #2563eb;"></p>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label>Ваше имя</label>
+                    <input type="text" required placeholder="Иван Иванов">
+                </div>
+                <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="tel" required placeholder="+7 (___) ___-__-__">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Дата начала</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Дата возврата</label>
+                        <input type="date" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Подтвердить заказ</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
